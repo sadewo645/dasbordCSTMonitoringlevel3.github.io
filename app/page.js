@@ -9,7 +9,7 @@ import ChartLine from '../components/ChartLine';
 import ChartPie from '../components/ChartPie';
 import AlarmPanel from '../components/AlarmPanel';
 
-const MQTT_URL = 'wss://2c4a86ed75a8439d80170f3d36f32cf3.s1.eu.hivemq.cloud:8884/mqtt';
+const MQTT_URL = 'wss://greenbumble-c0e61843.a03.euc1.aws.hivemq.cloud:8884/mqtt';
 const TOPIC = 'cst/data';
 const initialData = { temp1: 0, temp2: 0, cpo: 0, water: 0, sludge: 0, total_level_cm: 0, vol_cpo_l: 0, vol_water_l: 0, vol_sludge_l: 0, mass_cpo: 0, mass_water: 0, mass_sludge: 0, weight_cpo: 0, weight_water: 0, weight_sludge: 0, humidity_avg: 0, pressure_ref: 0 };
 
@@ -21,7 +21,7 @@ export default function Home() {
 
   useEffect(() => {
     const client = mqtt.connect(MQTT_URL, {
-      username: 'esp32user', password: 'Esp32user123', reconnectPeriod: 2000, connectTimeout: 10_000, clean: true
+      username: 'esp32user', password: 'Esp32user', reconnectPeriod: 2000, connectTimeout: 10_000, clean: true
     });
     clientRef.current = client;
 
